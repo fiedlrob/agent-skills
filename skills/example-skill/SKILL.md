@@ -1,5 +1,9 @@
 # SKILL
 
+This is the tool-agnostic core for the example skill. Keep reusable workflow
+instructions here, and put tool-specific discovery metadata in adapter files
+under `adapters/`.
+
 ## Name
 
 example-skill
@@ -30,9 +34,11 @@ authoring a new skill.
 3. Fill in `When to use` and `When not to use` with concrete trigger rules.
 4. Write the `Required workflow` as ordered, concrete steps the agent can follow
    without guessing.
-5. Add `Safety notes` for any destructive, external, or irreversible action.
-6. Delete the `references/` and `scripts/` directories if your skill does not
-   need them.
+5. Update `adapters/codex/SKILL.md` and `adapters/claude/SKILL.md` with the
+   loader metadata and short entrypoint text for those tools.
+6. Add `Safety notes` for any destructive, external, or irreversible action.
+7. Delete adapter, `references/`, or `scripts/` directories if your skill does
+   not need them.
 
 ## Safety notes
 
@@ -49,4 +55,5 @@ cp -r skills/example-skill skills/my-new-skill
 ```
 
 See `references/optional-reference.md` for a checklist, and
-`scripts/optional-helper.sh` for a small validation helper.
+`scripts/optional-helper.sh` for a small validation helper. The Codex and
+Claude adapter examples live under `adapters/`.

@@ -4,7 +4,9 @@ Agent Skills is a public collection of reusable skills for AI coding agents.
 
 The repository is intended to keep agent-facing workflows, conventions, and
 task-specific instructions versioned as plain text. Skills should be easy to
-review, copy, adapt, and improve through pull requests.
+review, copy, adapt, and improve through pull requests. Core instructions stay
+tool-agnostic; adapter files provide loader-specific metadata for agents such
+as Codex and Claude.
 
 ## Goals
 

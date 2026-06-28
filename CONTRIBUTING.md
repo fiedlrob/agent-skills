@@ -41,14 +41,19 @@ Use a directory per skill:
 ```text
 skills/
   example-skill/
-    SKILL.md
+    SKILL.md                 # Tool-agnostic core instructions
+    adapters/
+      codex/
+        SKILL.md             # Codex discovery metadata and entrypoint
+      claude/
+        SKILL.md             # Claude discovery metadata and entrypoint
     references/
       optional-reference.md
     scripts/
       optional-helper.sh
 ```
 
-Each `SKILL.md` should include:
+The root `SKILL.md` should include the tool-agnostic core:
 
 - Name
 - Description
@@ -57,6 +62,20 @@ Each `SKILL.md` should include:
 - Required workflow
 - Safety notes
 - Optional examples
+
+Adapter `SKILL.md` files should include the discovery metadata required by
+their target tool. Codex and Claude adapters must start with YAML frontmatter
+containing at least:
+
+```yaml
+---
+name: example-skill
+description: Use this skill when ...
+---
+```
+
+Keep adapter descriptions specific enough for tool loaders to decide when the
+skill should trigger, and keep the detailed workflow in the root `SKILL.md`.
 
 ## Writing Style
 
