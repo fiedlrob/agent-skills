@@ -29,7 +29,7 @@ required_sections=(
 
 missing=0
 for section in "${required_sections[@]}"; do
-  if ! grep -qF "$section" "$skill_file"; then
+  if ! grep -qxF "$section" "$skill_file"; then
     echo "missing section: $section"
     missing=1
   fi
