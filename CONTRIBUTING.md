@@ -34,9 +34,10 @@ A skill should be:
 - **Maintainable**: The skill avoids unnecessary complexity and stale
   assumptions.
 
-## Recommended Skill Structure
+## Required Skill Structure
 
-Use a directory per skill:
+Use a directory per skill. Every skill must include a root `SKILL.md` plus
+Codex and Claude adapters:
 
 ```text
 skills/
@@ -47,13 +48,13 @@ skills/
         SKILL.md             # Codex discovery metadata and entrypoint
       claude/
         SKILL.md             # Claude discovery metadata and entrypoint
-    references/
+    references/              # Optional supporting documentation
       optional-reference.md
-    scripts/
+    scripts/                 # Optional validation or helper scripts
       optional-helper.sh
 ```
 
-The root `SKILL.md` should include the tool-agnostic core:
+The root `SKILL.md` must include the tool-agnostic core:
 
 - Name
 - Description
@@ -63,8 +64,9 @@ The root `SKILL.md` should include the tool-agnostic core:
 - Safety notes
 - Optional examples
 
-Adapter `SKILL.md` files should include the discovery metadata required by
-their target tool. Codex and Claude adapters must start with YAML frontmatter
+Adapter `SKILL.md` files are required. They must include the discovery metadata
+needed by their target tool while delegating detailed workflow instructions to
+the root `SKILL.md`. Codex and Claude adapters must start with YAML frontmatter
 containing at least:
 
 ```yaml

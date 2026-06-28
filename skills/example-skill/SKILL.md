@@ -37,8 +37,8 @@ authoring a new skill.
 5. Update `adapters/codex/SKILL.md` and `adapters/claude/SKILL.md` with the
    loader metadata and short entrypoint text for those tools.
 6. Add `Safety notes` for any destructive, external, or irreversible action.
-7. Delete adapter, `references/`, or `scripts/` directories if your skill does
-   not need them.
+7. Delete `references/` or `scripts/` directories if your skill does not need
+   them. Keep both adapter directories.
 
 ## Safety notes
 
